@@ -295,7 +295,8 @@
 
         .hero-h1 {
             font-size: clamp(32px, 5vw, 48px);
-            font-weight: 800;
+            font-weight: 700;
+            /* Lighter typography as requested */
             color: var(--slate-800);
             line-height: 1.1;
             letter-spacing: -1.5px;
@@ -304,7 +305,8 @@
         .hero-h3 {
             font-size: clamp(16px, 2vw, 24px);
             /* Padrão H3: max 24px */
-            color: var(--slate-700);
+            color: var(--slate-600);
+            /* Lighter color */
             font-weight: 400;
             line-height: 1.6;
             max-width: 480px;
@@ -1519,65 +1521,134 @@
         }
 
         .cta-container {
-            background-color: var(--slate-900);
+            background-color: #FFFFFF;
             border-radius: clamp(32px, 5vw, 48px);
             padding: clamp(64px, 8vw, 100px) clamp(24px, 5vw, 64px);
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+            /* Soft premium shadow */
             position: relative;
             overflow: hidden;
         }
 
-        /* Elemento de design tech para fundo */
+        /* Subtle orange glow on the right like the reference */
         .cta-container::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(245, 130, 73, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .cta-container::after {
-            content: '';
-            position: absolute;
-            bottom: -50%;
+            top: -20%;
             right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(245, 130, 73, 0.05) 0%, transparent 70%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(245, 130, 73, 0.12) 0%, transparent 60%);
             border-radius: 50%;
             pointer-events: none;
+            z-index: 0;
         }
 
         .cta-h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 800;
-            color: white;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
+            font-size: clamp(32px, 4.5vw, 48px);
+            font-weight: 600;
+            /* Matching the visual weight from the image */
+            color: var(--slate-900);
+            letter-spacing: -1px;
+            line-height: 1.15;
             max-width: 800px;
             margin-bottom: 24px;
             z-index: 1;
         }
 
         .cta-text {
-            font-size: clamp(16px, 2vw, 18px);
-            color: var(--slate-300);
+            font-size: clamp(16px, 1.8vw, 20px);
+            color: var(--slate-600);
             line-height: 1.6;
-            max-width: 600px;
+            max-width: 650px;
             margin-bottom: 40px;
             z-index: 1;
         }
 
         .cta-btn-wrapper {
             z-index: 1;
+        }
+
+        /* ========================================================================= */
+        /* 11.5 MEDIA LOGOS / MARQUEE SECTION */
+        /* ========================================================================= */
+        .media-logos-section {
+            padding: clamp(60px, 8vw, 100px) 0;
+            background-color: var(--white, #ffffff);
+            text-align: center;
+            overflow: hidden;
+            /* Hide horizontal scroll */
+        }
+
+        .media-logos-header {
+            margin-bottom: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .media-subtitle {
+            color: var(--orange-600);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .media-title {
+            color: var(--slate-800);
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .media-marquee {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* Gradient fade edges for smooth entry/exit of logos */
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .media-track {
+            display: flex;
+            gap: 64px;
+            align-items: center;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+
+        /* Pause animation on hover */
+        .media-track:hover {
+            animation-play-state: paused;
+        }
+
+        .media-logo-item {
+            height: 48px;
+            object-fit: contain;
+            filter: grayscale(1);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .media-logo-item:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                /* Translate by half so the duplicate set seamlessly loops */
+                transform: translateX(-50%);
+            }
         }
 
         /* ========================================================================= */
@@ -1875,6 +1946,616 @@
             background-color: var(--slate-50);
             padding-left: 28px;
         }
+
+        /* ========================================================================= */
+        /* HERO SECTION */
+        /* ========================================================================= */
+        .hero-section {
+            padding-top: 80px;
+            /* Adjust based on navbar height */
+            padding-bottom: 80px;
+            background-color: var(--white);
+        }
+
+        .hero-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            overflow: hidden;
+            background-color: var(--white);
+            box-shadow: 0 16px 48px -16px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (min-width: 992px) {
+            .hero-card {
+                flex-direction: row;
+                min-height: 560px;
+                /* Or a suitable height */
+            }
+        }
+
+        .hero-content {
+            padding: 48px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                padding: 64px 48px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero-content {
+                width: 50%;
+                padding: 80px 60px;
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            color: var(--orange-500);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .hero-h1 {
+            font-size: clamp(36px, 4.5vw, 56px);
+            font-weight: 700;
+            color: var(--slate-900);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+
+        .hero-h3 {
+            font-size: clamp(16px, 1.5vw, 20px);
+            color: var(--slate-600);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            width: 100%;
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Example: background-image: url('your-image.jpg'); */
+        }
+
+        @media (min-width: 992px) {
+            .hero-image {
+                width: 50%;
+                min-height: auto;
+            }
+        }
+
+        /* ========================================================================= */
+        /* 4. TEAM / GESTORES SECTION */
+        /* ========================================================================= */
+        .team-section {
+            padding: clamp(80px, 10vw, 120px) 0;
+            background-color: var(--slate-50);
+            text-align: center;
+        }
+
+        .team-header {
+            max-width: 800px;
+            margin: 0 auto clamp(40px, 6vw, 64px) auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .team-h2 {
+            font-size: clamp(26px, 4vw, 32px);
+            font-weight: 700;
+            color: var(--slate-800);
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .team-text {
+            color: var(--slate-600);
+            font-size: clamp(15px, 2vw, 16px);
+            line-height: 1.6;
+        }
+
+        /* Grid de 4 Colunas no Desktop */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .team-card {
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.04);
+            position: relative;
+            /* Proporção de foto de perfil (Retrato) */
+            aspect-ratio: 3/4;
+            background: var(--slate-900);
+            cursor: pointer;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .team-card:hover img {
+            transform: scale(1.05);
+            opacity: 0.6;
+        }
+
+        .team-info {
+            position: absolute;
+            inset: 0;
+            padding: 32px 24px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: left;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0) 50%, rgba(15, 23, 42, 0) 100%);
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover .team-info {
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(249, 115, 22, 0.7) 100%);
+        }
+
+        .team-name {
+            font-size: clamp(20px, 2.5vw, 24px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+            transform: translateY(0);
+            transition: transform 0.4s ease;
+        }
+
+        .team-role {
+            font-size: 14px;
+            color: var(--orange-400);
+            font-weight: 600;
+            margin-bottom: 12px;
+            transform: translateY(0);
+            transition: transform 0.4s ease;
+        }
+
+        .team-desc {
+            font-size: 14px;
+            color: var(--slate-200);
+            line-height: 1.6;
+            opacity: 0;
+            max-height: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover .team-desc {
+            opacity: 1;
+            max-height: 150px;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .team-card:hover .team-name,
+        .team-card:hover .team-role {
+            transform: translateY(-4px);
+        }
+
+        /* ========================================================================= */
+        /* 4.5 SECURITY RIBBON SECTION */
+        /* ========================================================================= */
+        .security-section {
+            padding: 32px 0;
+            background-color: var(--white);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .security-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .security-grid {
+                justify-content: space-between;
+                gap: 16px;
+            }
+        }
+
+        .security-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--slate-700);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .security-icon {
+            color: var(--green-500);
+            flex-shrink: 0;
+            display: flex;
+        }
+
+        /* ========================================================================= */
+        /* 4.7 COMPATIBILITY BANNER SECTION */
+        /* ========================================================================= */
+        .compatibility-section {
+            background-color: var(--slate-50);
+            height: 250vh;
+            /* Cria o espaço longo para o scroll parar */
+            position: relative;
+        }
+
+        .compatibility-sticky-wrapper {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .compatibility-card {
+            background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 30%, #7c2d12 60%, var(--slate-900) 100%);
+            /* Background animaton prep */
+            background-size: 300% 300%;
+            background-position: var(--scroll-bg-pos, 0%) 50%;
+            border-radius: clamp(24px, 4vw, 40px);
+            padding: clamp(40px, 6vw, 64px);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.25);
+            text-align: center;
+            transition: background-position 0.1s ease-out;
+        }
+
+        /* Background pattern/glow effect */
+        .compatibility-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(249, 115, 22, 0) 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .compatibility-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .compatibility-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange-500);
+            flex-shrink: 0;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .compatibility-text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .compatibility-title {
+            color: white;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .compatibility-p {
+            color: var(--slate-300);
+            font-size: clamp(16px, 2vw, 18px);
+            line-height: 1.6;
+            margin: 0 auto;
+        }
+
+        /* ========================================================================= */
+        /* 5. AUTHORITY / MAP SECTION */
+        /* ========================================================================= */
+        .authority-section {
+            padding: clamp(80px, 10vw, 140px) 0;
+            background-color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(40px, 6vw, 64px);
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .authority-grid {
+                grid-template-columns: 1fr 1fr;
+                /* Meio a meio no desktop, texto à esquerda, mapa à direita (ou vice versa) */
+                text-align: left;
+            }
+        }
+
+        .authority-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .authority-label {
+            color: var(--orange-600);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .authority-h2 {
+            font-size: clamp(26px, 4vw, 32px);
+            /* Padrão H2 */
+            font-weight: 700;
+            color: var(--slate-800);
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .authority-text {
+            color: var(--slate-600);
+            font-size: clamp(15px, 2vw, 16px);
+            line-height: 1.6;
+        }
+
+        .authority-map-wrapper {
+            background-color: var(--slate-50);
+            border-radius: clamp(32px, 5vw, 48px);
+            padding: clamp(32px, 5vw, 48px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .authority-map-img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.05));
+        }
+
+        .authority-stat {
+            text-align: center;
+            font-size: 16px;
+            color: var(--slate-600);
+        }
+
+        .authority-stat strong {
+            color: var(--orange-600);
+            font-weight: 700;
+        }
+
+        /* Decorative Dots / Pagination from Image */
+        .authority-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 32px;
+            margin-bottom: 24px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid var(--slate-400);
+            background: transparent;
+        }
+
+        .dot.active {
+            background: var(--orange-500);
+            border-color: var(--orange-500);
+        }
+
+        /* Blue Button from image (though not ArchShop orange, matching the user reference) */
+        .btn-blue {
+            background: linear-gradient(to right, #2563EB, #1D4ED8);
+            /* Tailscale Blue like reference */
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 992px) {
+            .btn-blue {
+                margin: 0;
+                /* Left align on desktop inside content block */
+            }
+        }
+
+        /* ========================================================================= */
+        /* 6. SERVICES GRID SECTION (LEFT TEXT, RIGHT CARDS) */
+        /* ========================================================================= */
+        .services-section {
+            padding: clamp(80px, 10vw, 140px) 0;
+            background-color: var(--white);
+        }
+
+        .services-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(40px, 6vw, 80px);
+            align-items: start;
+        }
+
+        @media (min-width: 992px) {
+            .services-layout-grid {
+                /* 2 columns out of 4 mental model = 50% / 50% split */
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .services-header {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            /* Keep it at the top when scrolling if needed, or just normal layout */
+            position: sticky;
+            top: 120px;
+        }
+
+        .services-h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            color: var(--slate-900);
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .services-h3 {
+            font-size: clamp(18px, 2vw, 22px);
+            font-weight: 500;
+            color: var(--slate-700);
+            margin-bottom: 8px;
+        }
+
+        .services-text {
+            font-size: clamp(16px, 1.5vw, 18px);
+            color: var(--slate-600);
+            line-height: 1.6;
+            max-width: 90%;
+        }
+
+        /* The grid holding the cards on the right */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(16px, 2vw, 24px);
+        }
+
+        @media (min-width: 640px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .service-card {
+            background-color: #FAFAFA;
+            border-radius: 24px;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Left align to match the new split layout cleanliness */
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.08);
+            background-color: var(--white);
+        }
+
+        .service-icon-wrapper {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(242, 110, 50, 0.08);
+            /* Light orange circle */
+            color: var(--orange-500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .service-h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .service-text {
+            font-size: 15px;
+            color: var(--slate-600);
+            line-height: 1.6;
+        }
     </style>
 </head>
 
@@ -1929,11 +2610,12 @@
         <div class="container">
             <div class="hero-card">
                 <!-- Text Content -->
-                <div class="hero-content">
+                <div class="hero-content" style="background-color: transparent;">
+                    <!-- The image had right image and white left side -->
                     <span class="hero-badge">projetos arquitetônicos</span>
-                    <h1 class="hero-h1">O projeto arquitetônico que você procura, sem o custo que você imaginou.</h1>
-                    <h3 class="hero-h3">Projetos de alto padrão entregues em até 90 dias. Design moderno, custo
-                        controlado e zero desperdícios no seu orçamento.</h3>
+                    <h1 class="hero-h1">Engenharia para arquitetos: Projetos complementares e compatibilização.</h1>
+                    <h3 class="hero-h3">Esqueça o atraso na obra. Entregamos seu projeto estrutural, elétrico e
+                        hidráulico com foco total em preservar a estética do seu design.</h3>
 
                     <div class="hero-actions">
                         <a href="#" class="btn btn-primary">
@@ -1949,541 +2631,22 @@
                 </div>
 
                 <!-- Image Background -->
-                <div class="hero-image">
-                    <!-- Placeholder using an architectural image equivalent to original -->
-                    <img src="https://images.unsplash.com/photo-1628012198051-50e8ae693159?q=80&w=2670&auto=format&fit=crop"
-                        alt="Fachada de casa moderna">
+                <div class="hero-image" style="background-color: var(--slate-200);">
+                    <!-- We can leave img empty or transparent if they want just the background, or a placeholder -->
                 </div>
             </div>
+        </div>
     </header>
 
-    <!-- 3. LOGOS MARQUEE -->
-    <div class="container">
-        <section class="partners-section">
-            <h4 class="partners-header">Empresas e Parceiros que Confiam em Nós</h4>
-
-            <div class="marquee-wrapper">
-                <!--
-                    A div de conteúdo duplicada para gerar o loop contínuo sem solavancos.
-                -->
-                <div class="marquee-content">
-                    <!-- Set 1 (original) -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
-                        alt="Amazon" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
-                        class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Samsung_lettermark.svg/1024px-Samsung_lettermark.svg.png"
-                        alt="Samsung" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Tesla_logo.png/600px-Tesla_logo.png"
-                        alt="Tesla" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1024px-Netflix_2015_logo.svg.png"
-                        alt="Netflix" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1024px-IBM_logo.svg.png"
-                        alt="IBM" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1024px-Microsoft_logo_%282012%29.svg.png"
-                        alt="Microsoft" class="partner-logo">
-
-                    <!-- Set 2 (duplicado idêntico para garantir o scroll contínuo e mágico (seamless ring)) -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
-                        alt="Amazon" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
-                        class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Samsung_lettermark.svg/1024px-Samsung_lettermark.svg.png"
-                        alt="Samsung" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Tesla_logo.png/600px-Tesla_logo.png"
-                        alt="Tesla" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1024px-Netflix_2015_logo.svg.png"
-                        alt="Netflix" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1024px-IBM_logo.svg.png"
-                        alt="IBM" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1024px-Microsoft_logo_%282012%29.svg.png"
-                        alt="Microsoft" class="partner-logo">
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- 4. PAIN / SOLUTION SECTION -->
-    <section class="pain-section">
-        <div class="container">
-            <div class="pain-grid">
-
-                <!-- O Problema (Esquerda) -->
-                <div class="pain-content-left">
-                    <div class="pain-label">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        O Problema do Mercado
-                    </div>
-                    <h2 class="pain-h2">Por que projetos comuns demoram tanto para sair do papel?</h2>
-                    <p class="pain-text">
-                        A maioria dos arquitetos foca no ego, não no cronograma. O resultado? Reuniões infinitas,
-                        revisões que nunca acabam e você perdendo meses de aluguel ou condomínio com o terreno vazio.
-                    </p>
-                </div>
-
-                <!-- A Solução (Direita) -->
-                <div class="solution-card">
-                    <h3 class="solution-h3">Nós eliminamos a gordura do processo.</h3>
-                    <p class="solution-text">
-                        O ArchShop foi desenhado para quem valoriza tempo e alta arquitetura. Criamos um sistema
-                        inteligente onde a eficiência é o foco.
-                    </p>
-
-                    <ul class="solution-list">
-                        <li class="solution-item">
-                            <svg class="solution-icon" width="20" height="20" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span><strong>Briefing Assertivo:</strong> Um sistema refinado onde <em>você</em> manda no
-                                ritmo, eliminando achismos desde o dia 1.</span>
-                        </li>
-                        <li class="solution-item">
-                            <svg class="solution-icon" width="20" height="20" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span>Projetos liberados pontualmente, prontos para a aprovação dos condomínios em tempo
-                                recorde.</span>
-                        </li>
-                    </ul>
-
-                    <a href="#" class="btn btn-primary" style="width: 100%;">
-                        Quero um projeto rápido
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. FREE PROJECT (LEAD CAPTURE) SECTION -->
-    <section class="free-project-section">
-        <div class="container">
-            <div class="free-grid">
-
-                <!-- Coluna Esquerda: Bento Grid de Imagens -->
-                <div class="bento-grid">
-                    <div class="bento-item bento-1">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop"
-                            alt="Projeto Casa Conceito">
-                        <div class="bento-overlay"><span class="bento-title">Casa Minimal</span></div>
-                    </div>
-                    <div class="bento-item bento-2">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop"
-                            alt="Projeto Condomínio Fechado">
-                        <div class="bento-overlay"><span class="bento-title">Residência Vale</span></div>
-                    </div>
-                    <div class="bento-item bento-3">
-                        <img src="https://images.unsplash.com/photo-1600607687931-570a27ac5513?q=80&w=800&auto=format&fit=crop"
-                            alt="Projeto Área de Lazer">
-                        <div class="bento-overlay"><span class="bento-title">Varanda Premium</span></div>
-                    </div>
-                    <div class="bento-item bento-4">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
-                            alt="Projeto Integrado">
-                        <div class="bento-overlay"><span class="bento-title">Integração Total</span></div>
-                    </div>
-                </div>
-
-                <!-- Coluna Direita: Copy + Form (Mais editorial) -->
-                <div class="free-content">
-                    <div>
-                        <span class="free-project-label">Modelo ArchShop Gratuito</span>
-                        <h2 class="free-project-h2">Baixe um projeto <br>arquitetônico modelo.</h2>
-                    </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <p class="free-project-text">Ainda tem dúvidas sobre como enviamos nossos projetos
-                            arquitetônicos prontos?</p>
-                        <p class="free-project-text">Separamos um <strong>Projeto Grátis</strong> idêntico aos nossos
-                            originais para te ajudar a entender nosso padrão.</p>
-                        <p class="free-project-text">Este arquivo é para você que nunca comprou um projeto pela internet
-                            e não sabe exatamente <span>o que vai receber</span> em seu e-mail.</p>
-                    </div>
-
-                    <form class="free-project-form"
-                        onsubmit="event.preventDefault(); alert('Formulário enviado com sucesso!');">
-                        <strong style="font-size: 18px; color: var(--slate-800); margin-bottom: 4px;">Receba o arquivo
-                            agora:</strong>
-                        <input type="text" class="input-elegant" placeholder="Nome completo" required>
-                        <input type="email" class="input-elegant" placeholder="E-mail principal" required>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Enviar
-                            projeto grátis</button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. METHOD (LIVING TIMELINE) SECTION -->
-    <section class="method-section">
-        <div class="container">
-
-            <div class="method-header">
-                <span class="method-label">O Método ArchShop</span>
-                <h2 class="method-h2">Como nós projetamos seu futuro.</h2>
-            </div>
-
-            <div class="timeline-wrapper">
-
-                <!-- A espinha dorsal viva -->
-                <div class="timeline-line">
-                    <div class="timeline-progress" id="timelineProgress"></div>
-                </div>
-
-                <!-- PASSO 1 -->
-                <div class="timeline-step js-scroll-step">
-                    <div class="step-marker">
-                        <!-- Icone DNA/Fingerprint simulado -->
-                        <svg class="step-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <span class="step-subtitle">PASSO 01</span>
-                        <h3 class="step-title">DNA do Cliente</h3>
-                        <p class="step-text">Reunião focada para extrair exatamente o que você gosta (sem termos
-                            técnicos chatos). Nós lemos a sua mente, não o seu dicionário de arquitetura.</p>
-                    </div>
-                </div>
-
-                <!-- PASSO 2 -->
-                <div class="timeline-step js-scroll-step">
-                    <div class="step-marker">
-                        <!-- Ícone de Olho / Visão / Realismo -->
-                        <svg class="step-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <span class="step-subtitle">PASSO 02</span>
-                        <h3 class="step-title">Design Realista</h3>
-                        <p class="step-text">Criamos algo visualmente incrível que cabe perfeitamente no seu gosto de
-                            design, mas rigorosamente dimensionado para não acabar com o seu bolso na hora de construir.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- PASSO 3 -->
-                <div class="timeline-step js-scroll-step">
-                    <div class="step-marker">
-                        <!-- Ícone de Documento Fast / Entrega -->
-                        <svg class="step-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                    </div>
-                    <div class="step-content">
-                        <span class="step-subtitle">PASSO 03</span>
-                        <h3 class="step-title">Entrega Executiva</h3>
-                        <p class="step-text">Documentação completa, revisada e à prova de erros para a aprovação no
-                            condomínio e para a obra começar praticamente "ontem".</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. TESTIMONIAL SECTION -->
-    <section class="testimonial-section">
-        <div class="container">
-            <div class="testimonial-wrapper">
-                <div class="testimonial-label">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                    </svg>
-                    Aprovação Real
-                </div>
-
-                <h2 class="testimonial-h2">"A melhor decisão que tomamos..."</h2>
-
-                <div class="testimonial-card-wrapper">
-                    <div class="testimonial-card">
-                        <p class="testimonial-quote">"Nós estávamos perdidos com orçamentos estourados dos escritórios
-                            tradicionais. Quando descobrimos a ArchShop, foi um alívio. O projeto com todas as análises
-                            demorou muito menos, aprovamos no condomínio sem dor de cabeça, e a obra fluiu exatamente
-                            como o 3D. É uma arquitetura de altíssimo padrão, só que com a velocidade e o processo de
-                            uma startup moderna."</p>
-
-                        <div class="testimonial-author">
-                            <img class="testimonial-avatar"
-                                src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80"
-                                alt="Foto do Cliente">
-                            <div class="testimonial-author-info">
-                                <strong>Leonardo & Marina Costa</strong>
-                                <span>Proprietários - Condomínio Alpha</span>
-                                <div class="testimonial-stars">
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. AUTHORITY / MAP SECTION -->
-    <section class="authority-section">
-        <div class="container">
-            <div class="authority-grid">
-
-                <!-- Text Content Left (on desktop) -->
-                <div class="authority-content">
-                    <span class="authority-label">Arquitetura do Brasil para o Mundo</span>
-                    <h2 class="authority-h2">Nossa autoridade nos leva mais longe</h2>
-                    <p class="authority-text">São mais de 800 projetos de arquitetura desenvolvidos com qualidade e
-                        velocidade.</p>
-
-                    <!-- Only show button here on desktop -->
-                    <div style="margin-top: 24px;" class="desktop-only-btn">
-                        <a href="#" class="btn btn-blue">
-                            Ver todos os projetos
-                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Map Box Right (on desktop) -->
-                <div>
-                    <div class="authority-map-wrapper">
-                        <!-- Map Placeholder, replace with actual SVG or transparent PNG map -->
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brazil_Map_Empty.svg/1024px-Brazil_Map_Empty.svg.png"
-                            alt="Mapa do Brasil com cidades em destaque" class="authority-map-img"
-                            style="filter: drop-shadow(0 4px 6px rgba(245, 130, 73, 0.2)) hue-rotate(340deg) saturate(2) brightness(1.2);">
-
-                        <p class="authority-stat"><strong>Mais de 100</strong> municípios <br>em nosso portfólio</p>
-                    </div>
-
-                    <div class="authority-dots">
-                        <div class="dot active"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-
-                    <!-- Mobile Only Button -->
-                    <div class="mobile-only-btn">
-                        <a href="#" class="btn btn-blue" style="width: 100%;">
-                            Ver todos os projetos
-                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Utilitario para esconder botões dependendo da tela (poderia estar no topo, mas para isolar o componente coloquei inline os estilos para não quebrar o layout) -->
-    <style>
-        @media (min-width: 992px) {
-            .mobile-only-btn {
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .desktop-only-btn {
-                display: none !important;
-            }
-        }
-    </style>
-
-    <!-- 9. PORTFOLIO / APPRECIATION SECTION -->
-    <section class="portfolio-section">
-        <div class="container">
-            <div class="portfolio-header">
-                <h2 class="portfolio-h2">Sua casa mais elegante, segura e com o melhor custo-benefício.</h2>
-                <p class="portfolio-text">Deslize para ver alguns de nossos projetos favoritos e encontre o estilo
-                    perfeito para o seu próximo grande investimento.</p>
-            </div>
-
-            <!-- CSS Grid no Desktop, Carrossel tátil no Smartphone -->
-            <div class="portfolio-grid">
-
-                <!-- Imóvel 1 -->
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
-                        alt="Residência Alphaville">
-                    <div class="portfolio-card-overlay">
-                        <h3 class="portfolio-card-title">Residência Alpha</h3>
-                        <div class="portfolio-card-info">
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
-                                    </path>
-                                </svg> 240m²</span>
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                    </path>
-                                </svg> 3 Suítes</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imóvel 2 -->
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1628012198051-50e8ae693159?q=80&w=800&auto=format&fit=crop"
-                        alt="Casa Condomínio de Luxo">
-                    <div class="portfolio-card-overlay">
-                        <h3 class="portfolio-card-title">Mansão Deck</h3>
-                        <div class="portfolio-card-info">
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
-                                    </path>
-                                </svg> 380m²</span>
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                    </path>
-                                </svg> 4 Suítes</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imóvel 3 -->
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop"
-                        alt="Casa Minimalista">
-                    <div class="portfolio-card-overlay">
-                        <h3 class="portfolio-card-title">Villa Leme</h3>
-                        <div class="portfolio-card-info">
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
-                                    </path>
-                                </svg> 180m²</span>
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                    </path>
-                                </svg> 2 Suítes</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imóvel 4 -->
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop"
-                        alt="Projeto Área Gourmet">
-                    <div class="portfolio-card-overlay">
-                        <h3 class="portfolio-card-title">Bosque Sol</h3>
-                        <div class="portfolio-card-info">
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
-                                    </path>
-                                </svg> 290m²</span>
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                    </path>
-                                </svg> 3 Suítes</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imóvel 5 -->
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
-                        alt="Casa Conceito Noturna">
-                    <div class="portfolio-card-overlay">
-                        <h3 class="portfolio-card-title">Reserva Noir</h3>
-                        <div class="portfolio-card-info">
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
-                                    </path>
-                                </svg> 420m²</span>
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                    </path>
-                                </svg> 5 Suítes</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imóvel 6 -->
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1600607687931-570a27ac5513?q=80&w=800&auto=format&fit=crop"
-                        alt="Sala de Estar de Alto Padrão">
-                    <div class="portfolio-card-overlay">
-                        <h3 class="portfolio-card-title">Vista Verde</h3>
-                        <div class="portfolio-card-info">
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4">
-                                    </path>
-                                </svg> 210m²</span>
-                            <span><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                    </path>
-                                </svg> 3 Suítes</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div style="margin-top: 48px;">
-                <a href="#" class="btn btn-primary">Fazer meu projeto</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 10. TEAM / GESTORES SECTION -->
+    <!-- 3. TEAM / GESTORES SECTION -->
     <section class="team-section">
         <div class="container">
             <div class="team-header">
-                <h2 class="team-h2">Quem assina seus projetos</h2>
-                <p class="team-text">Conheça os arquitetos e gestores responsáveis por transformar a sua visão em uma
-                    realidade concreta e de alto padrão.</p>
+                <h2 class="team-h2">Por que terceirizar seus Projetos Executivos com a ArchShop?</h2>
+                <p class="team-text">A maioria dos escritórios de arquitetura perde dinheiro tentando gerenciar
+                    engenheiros lentos ou fazendo complementares internamente. Entregamos o projeto executivo completo
+                    em até <strong>15 dias úteis</strong>. Isso significa que a aprovação em condomínio acontece mais
+                    rápido e sua obra começa sem o risco de retrabalho.</p>
             </div>
 
             <div class="team-grid">
@@ -2542,15 +2705,383 @@
         </div>
     </section>
 
+    <!-- 4. SECURITY & PAYMENT SECTION -->
+    <section class="security-section">
+        <div class="container">
+            <div class="security-grid">
+
+                <div class="security-item">
+                    <div class="security-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <span>Pagamento 100% Seguro</span>
+                </div>
+
+                <div class="security-item">
+                    <div class="security-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <polyline points="9 12 11 14 15 10"></polyline>
+                        </svg>
+                    </div>
+                    <span>Aprovação Garantida</span>
+                </div>
+
+                <div class="security-item">
+                    <div class="security-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <span>Entrega no Prazo</span>
+                </div>
+
+                <div class="security-item">
+                    <div class="security-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path>
+                            <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"></path>
+                        </svg>
+                    </div>
+                    <span>Contrato Assinado</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SERVICES GRID SECTION -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-layout-grid">
+
+                <!-- Left text column (2 mental columns) -->
+                <div class="services-header">
+                    <h2 class="services-h2">Viabilização de Vãos Livres e Estruturas de Alto Padrão</h2>
+                    <h3 class="services-h3">Você projeta, nós calculamos.</h3>
+                    <p class="services-text">Somos especialistas em engenharia para arquitetura contemporânea. Se o seu
+                        projeto exige vãos amplos, balanços ousados e soluções limpas, você precisa de um parceiro que
+                        entenda de detalhamento executivo, não apenas de cálculo bruto.</p>
+                </div>
+
+                <!-- Right cards column (2 mental columns forming a 2x2 grid inside) -->
+                <div class="services-grid">
+                    <!-- Card 1 -->
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="16" height="20" x="4" y="2" rx="2" />
+                                <line x1="8" x2="16" y1="6" y2="6" />
+                                <line x1="16" x2="16" y1="14" y2="18" />
+                                <path d="M16 10h.01" />
+                                <path d="M12 10h.01" />
+                                <path d="M8 10h.01" />
+                                <path d="M12 14h.01" />
+                                <path d="M8 14h.01" />
+                                <path d="M12 18h.01" />
+                                <path d="M8 18h.01" />
+                            </svg>
+                        </div>
+                        <p class="service-text" style="font-weight: 500; color: var(--slate-800); font-size: 15px;">
+                            Cálculo estrutural
+                            otimizado para economia de materiais</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+                                <path d="M12 14v4" />
+                            </svg>
+                        </div>
+                        <p class="service-text" style="font-weight: 500; color: var(--slate-800); font-size: 15px;">
+                            Projetos hidráulicos e elétricos sem interferência</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                <polyline points="2 17 12 22 22 17" />
+                                <polyline points="2 12 12 17 22 12" />
+                            </svg>
+                        </div>
+                        <p class="service-text" style="font-weight: 500; color: var(--slate-800); font-size: 15px;">
+                            Compatibilização Nativa em BIM (Revit e Archicad)</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                        </div>
+                        <p class="service-text" style="font-weight: 500; color: var(--slate-800); font-size: 15px;">Foco
+                            em casas em
+                            condomínio fechado e projetos de luxo</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. COMPATIBILITY BANNER SECTION -->
+    <section class="compatibility-section">
+        <div class="compatibility-sticky-wrapper">
+            <div class="container" style="width: 100%;">
+                <div class="compatibility-card">
+                    <div class="compatibility-content">
+                        <div class="compatibility-icon-wrapper">
+                            <!-- Ícone de Layers / Compatibilização -->
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="compatibility-text-content">
+                            <h2 class="compatibility-title">Compatibilização de Projetos: O fim do erro na obra</h2>
+                            <p class="compatibility-p">Usamos tecnologia para prever o erro antes dele custar o dinheiro
+                                do
+                                seu cliente. Nossa compatibilização de projetos garante que a tubulação não cruze com a
+                                viga
+                                e que o quadro elétrico não destrua seu painel de marcenaria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. AUTHORITY / MAP SECTION -->
+    <section class="authority-section">
+        <div class="container">
+            <div class="authority-grid">
+
+                <!-- Text Content Left (on desktop) -->
+                <div class="authority-content">
+                    <span class="authority-label">Arquitetura do Brasil para o Mundo</span>
+                    <h2 class="authority-h2">Nossa autoridade nos leva mais longe</h2>
+                    <p class="authority-text">São mais de 800 projetos de arquitetura desenvolvidos com qualidade e
+                        velocidade.</p>
+
+                    <!-- Only show button here on desktop -->
+                    <div style="margin-top: 24px;" class="desktop-only-btn">
+                        <a href="#" class="btn btn-blue">
+                            Ver todos os projetos
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Box Right (on desktop) -->
+                <div>
+                    <div class="authority-map-wrapper">
+                        <!-- Map Placeholder, replace with actual SVG or transparent PNG map -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brazil_Map_Empty.svg/1024px-Brazil_Map_Empty.svg.png"
+                            alt="Mapa do Brasil com cidades em destaque" class="authority-map-img"
+                            style="filter: drop-shadow(0 4px 6px rgba(245, 130, 73, 0.2)) hue-rotate(340deg) saturate(2) brightness(1.2);">
+
+                        <p class="authority-stat"><strong>Mais de 100</strong> municípios <br>em nosso portfólio</p>
+                    </div>
+
+                    <div class="authority-dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+
+                    <!-- Mobile Only Button -->
+                    <div class="mobile-only-btn">
+                        <a href="#" class="btn btn-blue" style="width: 100%;">
+                            Ver todos os projetos
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Utilitario para esconder botões dependendo da tela -->
+    <style>
+        @media (min-width: 992px) {
+            .mobile-only-btn {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .desktop-only-btn {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <!-- Fim dos complementares, conectando direto ao CTA -->
+
     <!-- 11. FINAL CTA SECTION -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-container">
-                <h2 class="cta-h2">Pronto para tirar o seu projeto do papel?</h2>
-                <p class="cta-text">Fale com nossa equipe de especialistas e descubra como podemos materializar a casa
-                    dos seus sonhos com previsibilidade e elegância.</p>
+                <div style="color: var(--orange-500); margin-bottom: 24px; z-index: 1;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
+                <h2 class="cta-h2">Peça seu orçamento de viabilidade <br>em 2 horas</h2>
+                <p class="cta-text">Envie seu DWG ou link do modelo e receba um cronograma de entrega garantido</p>
                 <div class="cta-btn-wrapper">
-                    <a href="#" class="btn btn-primary">Fazer meu projeto</a>
+                    <a href="#" class="btn btn-primary" style="display: flex; gap: 8px; font-weight: 500;">
+                        Solicitar projetos complementares
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 12h16m0 0l-6-6m6 6l-6 6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11.5 MEDIA LOGOS SECTION -->
+    <section class="media-logos-section">
+        <div class="container">
+            <div class="media-logos-header">
+                <span class="media-subtitle">Sites Importantes Reconhecem a Archshop</span>
+                <h2 class="media-title">ArchShop na Mídia</h2>
+            </div>
+        </div>
+
+        <div class="container" style="overflow: hidden;">
+            <div class="media-marquee">
+                <!-- Double the content inside the track to create the infinite loop effect -->
+                <div class="media-track">
+                    <!-- SET 1 -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
+
+                    <!-- SET 2 -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
+
+                    <!-- SET 3 -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
+
+                    <!-- SET 4 -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
+
+                    <!-- SET 5 (Duplicate for loop) -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
+
+                    <!-- SET 6 (Duplicate for loop) -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
+
+                    <!-- SET 7 (Duplicate for loop) -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
+
+                    <!-- SET 8 (Duplicate for loop) -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Band_logo.svg/512px-Band_logo.svg.png"
+                        alt="Band" class="media-logo-item" style="height: 44px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/UOL_logo.png/512px-UOL_logo.png"
+                        alt="UOL" class="media-logo-item" style="height: 38px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Exame_logo.svg/512px-Exame_logo.svg.png"
+                        alt="Exame" class="media-logo-item" style="height: 32px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_Estad%C3%A3o.svg/512px-Logo_Estad%C3%A3o.svg.png"
+                        alt="Estadão" class="media-logo-item" style="height: 28px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/G1_logo.svg/512px-G1_logo.svg.png"
+                        alt="G1" class="media-logo-item" style="height: 36px;">
                 </div>
             </div>
         </div>
@@ -2728,6 +3259,29 @@
         }, observerOptions);
 
         steps.forEach(step => observer.observe(step));
+
+        // Compatibilização Gradient Scroll Stop Animation
+        const compSection = document.querySelector('.compatibility-section');
+        const compCard = document.querySelector('.compatibility-card');
+        if (compSection && compCard) {
+            window.addEventListener('scroll', () => {
+                const rect = compSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                let progress = 0;
+                // Quando o topo da sessão chega no topo da tela, inicia a "parada"
+                if (rect.top <= 0) {
+                    const scrollableDistance = rect.height - windowHeight;
+                    progress = Math.abs(rect.top) / scrollableDistance;
+                }
+
+                const clampedProgress = Math.min(Math.max(progress, 0), 1);
+
+                // Mapeia 0 - 1 para 0% - 100% da posição de fundo
+                const bgPos = clampedProgress * 100;
+                compCard.style.setProperty('--scroll-bg-pos', `${bgPos}%`);
+            });
+        }
     });
 </script>
 

@@ -46,7 +46,7 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: clamp(48px, 10vw, 96px);
+            gap: clamp(64px, 12vw, 120px);
             /* Entrada suave da página */
             animation: fadeIn 0.8s ease-out;
         }
@@ -96,11 +96,10 @@
         }
 
         h1 {
-            font-size: clamp(28px, 6vw, 36px);
-            /* Scala fluida texto - max 36px */
-            font-weight: 700;
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 800;
             color: var(--slate-800);
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             margin-bottom: 16px;
             line-height: 1.1;
         }
@@ -122,8 +121,9 @@
         }
 
         h2 {
-            font-size: clamp(26px, 4vw, 32px);
+            font-size: clamp(28px, 4vw, 36px);
             font-weight: 700;
+            letter-spacing: -1px;
             color: var(--slate-800);
             border-bottom: 1px solid var(--slate-200);
             padding-bottom: 8px;
@@ -220,9 +220,10 @@
         /* Panels (Containers brancos com flutuação) */
         .panel {
             background: #fff;
-            padding: clamp(20px, 4vw, 32px);
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: clamp(32px, 5vw, 48px);
+            border-radius: 32px;
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.02);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
@@ -450,11 +451,11 @@
 
         input {
             width: 100%;
-            padding: 14px 24px;
+            padding: 16px 28px;
             border-radius: 9999px;
-            border: 2px solid var(--slate-200);
-            background: white;
-            color: var(--slate-700);
+            border: 1px solid transparent;
+            background: var(--slate-100);
+            color: var(--slate-800);
             font-size: 16px;
             font-family: 'Inter', sans-serif;
             transition: all 0.3s ease;
@@ -464,7 +465,7 @@
         input:focus {
             border-color: var(--orange-500);
             box-shadow: 0 0 0 4px rgba(245, 130, 73, 0.15);
-            background: var(--slate-50);
+            background: white;
         }
 
         input:focus+label {
@@ -521,12 +522,12 @@
         .card-project {
             width: 100%;
             background: white;
-            border-radius: 24px;
+            border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.04);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            border: 1px solid transparent;
+            border: 1px solid rgba(0, 0, 0, 0.02);
         }
 
         .card-project:hover {
