@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --archshop-orange: #F58249;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.text-archshop-orange {
+  color: var(--archshop-orange);
+}
+
+.bg-archshop-orange {
+  background-color: var(--archshop-orange);
+}
+
+/* Custom Styles */
+.uppercase-none {
+  text-transform: none !important;
+}
