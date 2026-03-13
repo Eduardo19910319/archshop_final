@@ -1,22 +1,26 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Agony from '../components/Agony';
 import PainPoints from '../components/PainPoints';
-import HowItWorks from '../components/HowItWorks';
-import Statistics from '../components/Statistics';
-import WhatsIncluded from '../components/WhatsIncluded';
-import Authority from '../components/Authority';
+import Process from '../components/Process';
+import ServiceDetails from '../components/ServiceDetails';
+import Stats from '../components/Stats';
+import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
+import CaptureCTA from '../components/CaptureCTA';
 
 const HomePage = () => {
   return (
     <main>
       <Hero />
+      <Agony />
       <PainPoints />
-      <HowItWorks />
-      <Statistics />
-      <WhatsIncluded />
-      <Authority />
+      <Process />
+      <ServiceDetails />
+      <Stats />
+      <Testimonials />
       <FAQ />
+      <CaptureCTA />
     </main>
   );
 };
