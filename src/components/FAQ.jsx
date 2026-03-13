@@ -1,62 +1,78 @@
 import React, { useState } from 'react';
-import { Plus, Minus } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Minus } from "lucide-react";
+import { Reveal } from "./Reveal";
 
-const FAQ = ({ items = [] }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+const FAQ = ({ items }) => {
+    const [openIndex, setOpenIndex] = useState(0);
 
-  const defaultItems = [
-    {
-      q: "Qual o prazo médio de entrega?",
-      a: "Para projetos pontuais, entregamos em até 48 horas. Projetos maiores dependem da complexidade."
-    },
-    {
-      q: "Vocês trabalham com White Label?",
-      a: "Sim, para arquitetos oferecemos selo invisível para que você entregue ao cliente com sua marca."
-    }
-  ];
+    const defaultQuestions = [
+        {
+            q: "Quanto tempo demora para receber o projeto?",
+            a: "Nosso prazo médio para a primeira entrega (Estudo Preliminar) é de 15 a 20 dias úteis após a reunião de DNA. A velocidade é um de nossos pilares."
+        },
+        {
+            q: "Vocês atendem em qualquer lugar do Brasil?",
+            a: "Sim! Somos especialistas em atendimento 100% online. Já entregamos mais de 800 projetos em todos os estados brasileiros e em outros países."
+        },
+        {
+            q: "Vou receber a planta para a obra ou só imagens?",
+            a: "Você recebe o Pacote Executivo Completo: plantas técnicas, detalhamento elétrico/hidráulico, especificações de materiais e as imagens 3D fotorrealistas."
+        },
+        {
+            q: "Como sei que o projeto vai caber no meu orçamento?",
+            a: "Nossa metodologia inclui uma análise de pré-viabilidade. Não desenhamos 'castelos de areia' que não podem ser construídos pelo valor que você pretende investir."
+        }
+    ];
 
-  const faqItems = items.length > 0 ? items : defaultItems;
+    const questions = items || defaultQuestions;
 
-  return (
-    <section className="py-24 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 font-outfit uppercase-none">Dúvidas Frequentes</h2>
-        </div>
+    return (
+        <section className="w-full py-20 md:py-32 bg-white" id="faq">
+            <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
 
-        <div className="space-y-4">
-          {faqItems.map((item, index) => (
-            <div key={index} className="border border-gray-100 rounded-2xl overflow-hidden hover:border-archshop-orange/30 transition-all">
-              <button
-                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                className="w-full px-8 py-6 flex items-center justify-between text-left bg-white transition-colors"
-              >
-                <span className="text-lg font-semibold text-gray-900 font-outfit uppercase-none">{item.q}</span>
-                <div className={`p-2 rounded-full transition-all ${activeIndex === index ? 'bg-orange-50 text-archshop-orange' : 'bg-gray-50 text-gray-400'}`}>
-                  {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                <div className="text-center mb-16">
+                    <Reveal direction="up" delay={0.1}>
+                        <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4 tracking-tight">Perguntas comuns.</h2>
+                    </Reveal>
+                    <Reveal direction="up" delay={0.2}>
+                        <p className="text-gray-500 text-lg font-light">Tudo o que você precisa saber para começar agora.</p>
+                    </Reveal>
                 </div>
-              </button>
-              <AnimatePresence>
-                {activeIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    <div className="px-8 pb-8 text-gray-500 leading-relaxed text-base">
-                      {item.a}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+
+                <div className="space-y-4">
+                    {questions.map((item, idx) => (
+                        <Reveal key={idx} direction="up" delay={0.1 + (idx * 0.05)}>
+                            <div
+                                className={`group rounded-[2rem] border transition-all duration-300 ${openIndex === idx ? 'border-orange-200 bg-orange-50/30' : 'border-gray-100 bg-gray-50/50 hover:bg-gray-50'
+                                    }`}
+                            >
+                                <button
+                                    onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                                    className="w-full flex items-center justify-between p-6 sm:p-8 text-left"
+                                >
+                                    <span className={`text-lg sm:text-xl font-medium transition-colors ${openIndex === idx ? 'text-gray-900' : 'text-gray-700'}`}>
+                                        {item.q}
+                                    </span>
+                                    <div className={`p-2 rounded-full transition-all ${openIndex === idx ? 'bg-archshop-orange text-white rotate-0' : 'bg-white text-gray-400 rotate-90'}`}>
+                                        {openIndex === idx ? <Minus className="w-4 h-4 sm:w-5 sm:h-5" /> : <Plus className="w-4 h-4 sm:w-5 sm:h-5" />}
+                                    </div>
+                                </button>
+
+                                {openIndex === idx && (
+                                    <div className="px-6 sm:px-8 pb-8 transition-all duration-300">
+                                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
+                                            {item.a}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                        </Reveal>
+                    ))}
+                </div>
+
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+        </section>
+    );
+}
 
 export default FAQ;
