@@ -7,15 +7,7 @@ import Footer from './components/Footer';
 import B2BPage from './pages/B2BPage';
 import RenderArchitectsPage from './pages/RenderArchitectsPage';
 import RenderLaunchesPage from './pages/RenderLaunchesPage';
-
-const HomePage = () => (
-  <>
-    <div className="pt-20">
-      <h1 className="text-center text-4xl mt-20">Home Page Placeholder</h1>
-      <p className="text-center text-gray-500 mt-4">Redirecionando para as novas páginas...</p>
-    </div>
-  </>
-);
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
