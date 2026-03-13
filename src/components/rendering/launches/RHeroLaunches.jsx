@@ -17,11 +17,11 @@ const RHeroLaunches = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] mb-6 font-outfit">
-              Acelere seu <span className="text-archshop-orange">VGV</span> com Visualização Estratégica
+              Renders 3D para <span className="text-archshop-orange">Lançamentos Imobiliários</span> de Alto Padrão
             </h1>
             
             <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-xl">
-              Vendemos o empreendimento antes do primeiro tijolo. Imagens fotorrealistas e cinematografia de arquitetura que confundem o olho do comprador e geram desejo imediato.
+              Vendemos o empreendimento antes do primeiro tijolo. Visualização 3D fotorrealista e vídeos cinematográficos que geram desejo imediato e aceleram seu VGV.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -52,7 +52,7 @@ const RHeroLaunches = () => {
             <div className="aspect-[4/3] rounded-3xl bg-gray-100 overflow-hidden shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" 
-                alt="Luxury Real Estate Render"
+                alt="Visualização 3D cinematográfica para lançamentos imobiliários de alto padrão - ArchShop"
                 className="w-full h-full object-cover"
               />
             </div>

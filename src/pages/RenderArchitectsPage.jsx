@@ -1,4 +1,4 @@
-import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import RHeroArchitects from '../components/rendering/architects/RHeroArchitects';
 import RAgonyArchitects from '../components/rendering/architects/RAgonyArchitects';
 import RServicesArchitects from '../components/rendering/architects/RServicesArchitects';
@@ -13,6 +13,10 @@ const RenderArchitectsPage = () => {
 
   return (
     <div className="bg-white">
+      <Helmet>
+        <title>Terceirização de Render 3D para Arquitetos | White Label e Entrega 48h</title>
+        <meta name="description" content="Aumente sua produtividade terceirizando a renderização dos seus projetos. Qualidade fotorrealista e entrega rápida para sua arquitetura." />
+      </Helmet>
       <RHeroArchitects />
       <RAgonyArchitects />
       <RServicesArchitects />

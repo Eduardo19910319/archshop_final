@@ -1,4 +1,4 @@
-import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import RHeroLaunches from '../components/rendering/launches/RHeroLaunches';
 import RAgonyLaunches from '../components/rendering/launches/RAgonyLaunches';
 import RServicesLaunches from '../components/rendering/launches/RServicesLaunches';
@@ -12,6 +12,10 @@ const RenderLaunchesPage = () => {
 
   return (
     <div className="bg-white">
+      <Helmet>
+        <title>Visualização 3D e Renders para Lançamentos Imobiliários | ArchShop</title>
+        <meta name="description" content="Acelere o VGV do seu empreendimento com imagens cinematográficas e vídeos que vendem antes do primeiro tijolo." />
+      </Helmet>
       <RHeroLaunches />
       <RAgonyLaunches />
       <RServicesLaunches />

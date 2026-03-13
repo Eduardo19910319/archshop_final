@@ -17,11 +17,11 @@ const B2BHero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] mb-6 font-outfit">
-              Seu <span className="text-archshop-orange">Braço de Engenharia</span> Executiva e BIM
+              Projetos de <span className="text-archshop-orange">Engenharia Complementar</span> e Compatibilização BIM
             </h1>
             
             <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-xl">
-              Elimine o retrabalho de obra e interferências de pilares. Oferecemos compatibilização técnica em BIM para que sua arquitetura brilhe sem imprevistos.
+              Elimine o retrabalho de obra e interferências de pilares. Oferecemos projetos de cálculo estrutural, elétrico e hidráulico em BIM para que sua arquitetura brilhe sem imprevistos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -55,7 +55,7 @@ const B2BHero = () => {
             <div className="aspect-[4/3] rounded-[3rem] bg-gray-100 overflow-hidden shadow-2xl border-8 border-white">
               <img 
                 src="https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80" 
-                alt="Architectural BIM Engineering"
+                alt="Projetos de engenharia complementar e compatibilização BIM para arquitetos - ArchShop"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -17,11 +17,11 @@ const RHeroArchitects = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] mb-6 font-outfit">
-              Seu <span className="text-archshop-orange">Braço de Modelagem 3D</span> e Renderização
+              Terceirização de <span className="text-archshop-orange">Modelagem 3D e Renderização</span> de Arquitetura
             </h1>
             
             <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-xl">
-              Elimine o gargalo de produção e foque no design. Oferecemos velocidade, escala e custo fixo baixo com Render Express e entrega em 48h.
+              Elimine o gargalo de produção e foque no design. Oferecemos renders fotorrealistas de alta qualidade, escala e custo fixo baixo com entrega em 48h.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -52,7 +52,7 @@ const RHeroArchitects = () => {
             <div className="aspect-[4/3] rounded-3xl bg-gray-100 overflow-hidden shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1600607687940-47a04b62d776?auto=format&fit=crop&q=80" 
-                alt="Architectural Render"
+                alt="Terceirização de renderização 3D fotorrealista e modelagem para arquitetos - ArchShop"
                 className="w-full h-full object-cover"
               />
             </div>
