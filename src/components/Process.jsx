@@ -35,7 +35,7 @@ const Process = () => {
                     </Reveal>
                     <Reveal direction="up" delay={0.1}>
                         <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6 font-outfit">
-                            O caminho inteligente entre seu sonho e as <span className="text-gray-400 italic">chaves na mão.</span>
+                            Nosso Método de <span className="text-gray-400 italic">Arquitetura e Engenharia</span> em 3 Passos.
                         </h2>
                     </Reveal>
                 </div>

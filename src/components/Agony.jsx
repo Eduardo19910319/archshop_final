@@ -41,7 +41,7 @@ const Agony = () => {
                     </Reveal>
                     <Reveal direction="up" delay={0.1}>
                         <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none max-w-3xl mx-auto">
-                            Construir uma casa não deveria ser um <span className="text-gray-400 italic">pesadelo financeiro.</span>
+                            Evite os Erros Comuns em <span className="text-gray-400 italic">Projetos de Casas de Luxo.</span>
                         </h2>
                     </Reveal>
                     <Reveal direction="up" delay={0.2}>

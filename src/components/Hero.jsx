@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="absolute inset-0 z-0 overflow-hidden w-full h-full max-w-[100vw]">
           <img
             src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2600&auto=format&fit=crop"
-            alt="Arquitetura Noturna Iluminada"
+            alt="Fachada de casa moderna iluminada - Projeto de Arquitetura ArchShop"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity scale-105 animate-[slowZoom_20s_ease-in-out_infinite_alternate]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-50 via-zinc-50/80 to-transparent z-10"></div>
@@ -27,13 +27,13 @@ const Hero = () => {
                   <span className="absolute inline-flex h-full w-full rounded-full bg-archshop-orange opacity-75 animate-ping"></span>
                   <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-archshop-orange"></span>
                 </span>
-                ArchShop Studio
+                Projetos de Arquitetura e Engenharia
               </div>
             </Reveal>
 
             <Reveal direction="up" delay={0.2}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] mb-6 font-outfit uppercase-none">
-                Maximize o seu tempo com <span className="text-archshop-orange">projetos magistrais</span>
+                Projetos de <span className="text-archshop-orange">Arquitetura de Alto Padrão</span> e Tecnologia BIM
               </h1>
             </Reveal>
 

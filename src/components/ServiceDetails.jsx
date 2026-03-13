@@ -48,7 +48,7 @@ const ServiceDetails = () => {
                         </Reveal>
                         <Reveal direction="up" delay={0.1}>
                             <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 font-outfit uppercase-none">
-                                Um pacote completo para você não se <span className="text-gray-400 italic">preocupar com nada.</span>
+                                Tudo o que está incluso no seu <span className="text-gray-400 italic">Projeto de Casa Completo.</span>
                             </h2>
                         </Reveal>
                     </div>

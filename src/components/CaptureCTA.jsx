@@ -18,7 +18,7 @@ const CaptureCTA = () => {
                     
                     <Reveal direction="up" delay={0.1}>
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white mb-10 leading-[1.1] font-outfit uppercase-none max-w-4xl mx-auto">
-                            Pronto para transformar seu terreno no seu <span className="text-archshop-orange italic">novo endereço?</span>
+                            Inicie o seu <span className="text-archshop-orange italic">Projeto Residencial</span> agora mesmo.
                         </h2>
                     </Reveal>
                     
