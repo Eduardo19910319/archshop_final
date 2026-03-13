@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star } from "lucide-react";
-import { Reveal } from "./Reveal";
+import Reveal from "./Reveal";
 
 const Testimonials = () => {
     const reviews = [
@@ -25,29 +25,34 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="w-full py-20 md:py-32 bg-gray-50" id="depoimentos">
+        <section className="w-full py-24 bg-gray-50 border-y border-gray-100" id="depoimentos">
             <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-                <div className="text-center mb-16 md:mb-24">
+                <div className="text-center mb-20">
+                    <Reveal direction="up">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-archshop-orange/10 border border-archshop-orange/20 text-archshop-orange text-xs font-semibold mb-6 uppercase">
+                            Quem Confiou, Aprovou
+                        </div>
+                    </Reveal>
                     <Reveal direction="up" delay={0.1}>
-                        <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4 tracking-tight leading-tight">
-                            Quem confiou,<br /> <span className="text-gray-400 italic font-light font-serif">aprovou.</span>
+                        <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6 font-outfit">
+                            Histórias que começaram <br className="hidden md:block" /> com um <span className="text-gray-400 italic">voto de confiança.</span>
                         </h2>
                     </Reveal>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8 md:gap-10">
+                <div className="grid md:grid-cols-3 gap-8">
                     {reviews.map((review, idx) => (
                         <Reveal key={idx} direction="up" delay={0.2 + (idx * 0.1)}>
-                            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_15px_40px_-10px_rgba(0,0,0,0.03)] border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-500">
+                            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-all duration-500 group">
                                 <div className="flex gap-1 mb-6 text-archshop-orange">
                                     {[...Array(review.rating)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 fill-current" />
+                                        <Star key={i} size={16} className="fill-current" />
                                     ))}
                                 </div>
-                                <p className="text-gray-700 text-lg leading-relaxed mb-8 flex-grow italic font-light">"{review.text}"</p>
+                                <p className="text-gray-600 text-lg leading-relaxed mb-8 flex-grow font-light">"{review.text}"</p>
                                 <div>
-                                    <p className="font-bold text-gray-900 text-lg">{review.name}</p>
-                                    <p className="text-gray-500 text-sm font-medium uppercase tracking-wider">{review.role}</p>
+                                    <p className="font-semibold text-gray-900 text-lg font-outfit">{review.name}</p>
+                                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest">{review.role}</p>
                                 </div>
                             </div>
                         </Reveal>

@@ -1,48 +1,60 @@
 import React from 'react';
-import { Mail, ArrowRight } from 'lucide-react';
+import { Mail, ArrowRight, MessageCircle } from 'lucide-react';
 import Reveal from './Reveal';
 
 const CaptureCTA = () => {
     return (
-        <section className="w-full py-24 bg-zinc-900 relative overflow-hidden">
-            {/* Background Accent */}
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-archshop-orange"></div>
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-archshop-orange/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-            <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center relative z-10">
-                <Reveal direction="up">
-                    <h2 className="text-3xl md:text-5xl font-outfit font-medium text-white mb-8 leading-tight uppercase">
-                        Pronto para transformar seu terreno no seu <span className="text-archshop-orange italic">novo endereço?</span>
-                    </h2>
-                </Reveal>
-                
-                <Reveal direction="up" delay={0.1}>
-                    <p className="text-zinc-400 text-lg mb-12 max-w-2xl mx-auto font-light">
-                        Deixe seu e-mail abaixo e receba um guia exclusivo sobre como planejar sua obra sem estresse e com previsibilidade financeira.
-                    </p>
-                </Reveal>
-
-                <Reveal direction="up" delay={0.2}>
-                    <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
-                        <div className="relative flex-grow">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 w-5 h-5" />
-                            <input 
-                                type="email" 
-                                placeholder="Seu melhor e-mail" 
-                                className="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-6 text-white focus:outline-none focus:border-archshop-orange transition-colors placeholder:text-zinc-600"
-                            />
+        <section className="w-full py-24 bg-white relative overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
+                <div className="bg-zinc-900 border border-white/5 rounded-[2.5rem] p-8 md:p-16 lg:p-20 relative overflow-hidden text-center">
+                    {/* Background Detail */}
+                    <div className="absolute top-0 right-0 w-1/3 h-full bg-[#F58249]/10 blur-[120px] pointer-events-none"></div>
+                    
+                    <Reveal direction="up">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/50 text-[10px] font-bold uppercase tracking-widest mb-8">
+                            Vamos começar seu projeto?
                         </div>
-                        <button className="bg-archshop-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full transition-all flex items-center justify-center gap-2 group whitespace-nowrap">
-                            QUERO COMEÇAR <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </form>
-                </Reveal>
-                
-                <Reveal direction="up" delay={0.3}>
-                    <p className="mt-8 text-zinc-500 text-xs uppercase tracking-widest font-medium">
-                        Atendimento imediato via <a href="#" className="text-white hover:text-archshop-orange transition-colors underline underline-offset-4">WhatsApp</a>
-                    </p>
-                </Reveal>
+                    </Reveal>
+                    
+                    <Reveal direction="up" delay={0.1}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white mb-10 leading-[1.1] font-outfit uppercase-none max-w-4xl mx-auto">
+                            Pronto para transformar seu terreno no seu <span className="text-archshop-orange italic">novo endereço?</span>
+                        </h2>
+                    </Reveal>
+                    
+                    <Reveal direction="up" delay={0.2}>
+                        <p className="text-zinc-400 text-lg mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                            Receba nosso guia exclusivo sobre como planejar sua obra sem estresse e com <strong className="font-semibold text-white">previsibilidade financeira total.</strong>
+                        </p>
+                    </Reveal>
+
+                    <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-10">
+                        <Reveal direction="up" delay={0.3} className="flex-grow">
+                            <div className="relative">
+                                <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-zinc-600 w-5 h-5" />
+                                <input 
+                                    type="email" 
+                                    placeholder="Seu melhor e-mail" 
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 pl-14 pr-6 text-white focus:outline-none focus:border-archshop-orange transition-colors placeholder:text-zinc-600 font-medium"
+                                />
+                            </div>
+                        </Reveal>
+                        <Reveal direction="up" delay={0.4}>
+                            <button className="w-full sm:w-auto bg-archshop-orange hover:bg-orange-600 text-white font-bold py-5 px-10 rounded-2xl transition-all flex items-center justify-center gap-3 group shadow-xl shadow-orange-950/20">
+                                ENVIAR <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                            </button>
+                        </Reveal>
+                    </div>
+                    
+                    <Reveal direction="up" delay={0.5}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10 border-t border-white/5">
+                           <p className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Atendimento Comercial</p>
+                           <a href="#" className="flex items-center gap-2 text-white hover:text-archshop-orange transition-colors font-semibold">
+                               <MessageCircle size={18} className="text-green-500" /> WhatsApp Oficial
+                           </a>
+                        </div>
+                    </Reveal>
+                </div>
             </div>
         </section>
     );

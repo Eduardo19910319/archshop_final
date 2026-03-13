@@ -8,6 +8,7 @@ import B2BPage from './pages/B2BPage';
 import RenderArchitectsPage from './pages/RenderArchitectsPage';
 import RenderLaunchesPage from './pages/RenderLaunchesPage';
 import HomePage from './pages/HomePage';
+import DesignSystemPage from './pages/DesignSystemPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/para-arquitetos" element={<B2BPage />} />
           <Route path="/render-arquitetos" element={<RenderArchitectsPage />} />
           <Route path="/render-lancamentos" element={<RenderLaunchesPage />} />
+          <Route path="/design-system" element={<DesignSystemPage />} />
         </Routes>
         <Footer />
       </div>
