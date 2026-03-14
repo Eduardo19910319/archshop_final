@@ -27,9 +27,14 @@ const B2BWorkflow = () => {
 
                 <div className="mb-16 md:mb-24 text-center max-w-2xl mx-auto">
                     <Reveal direction="up" delay={0.1}>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 tracking-tight">
-                            Método <span className="text-archshop-orange font-bold">ArchShop</span> de<br className="hidden sm:block" /> projetar
+                        <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 font-outfit uppercase-none">
+                            Dúvidas Frequentes <span className="text-gray-400 italic">sobre Engenharia e BIM para Arquitetos</span>
                         </h2>
+                    </Reveal>
+                    <Reveal direction="up" delay={0.2}>
+                        <p className="text-gray-600 text-lg mt-6">
+                            Como transformamos sua concepção arquitetônica em um projeto técnico de alta precisão.
+                        </p>
                     </Reveal>
                 </div>
 

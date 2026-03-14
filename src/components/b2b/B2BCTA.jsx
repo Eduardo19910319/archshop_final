@@ -14,10 +14,10 @@ const B2BCTA = () => {
                     <div className="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-orange-50 rounded-bl-full opacity-60"></div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 mb-4 md:mb-6 tracking-tight relative z-10">
-                        Sua casa <span className="font-bold text-archshop-orange">não precisa ser chata</span> para ser segura
+                        Sua autoria protegida por <span className="font-bold text-archshop-orange">precisão técnica e segurança</span>
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-500 mb-8 md:mb-12 max-w-2xl mx-auto relative z-10">
-                        Fale diretamente com nossos arquitetos especialistas e comprove que dá para unir criatividade com viabilidade de obra.
+                        Terceirize a engenharia com quem fala a língua do arquiteto. Projetos compatibilizados em BIM para obras sem imprevistos.
                     </p>
 
                     <a
