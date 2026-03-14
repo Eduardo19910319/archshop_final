@@ -3,10 +3,10 @@ import Reveal from './Reveal';
 
 const Stats = () => {
     const stats = [
-        { label: "Projetos Entregues", value: "800+" },
-        { label: "Anos de Mercado", value: "12+" },
-        { label: "Economia em Obra", value: "20%" },
-        { label: "Suporte 24/7", value: "YES" }
+        { label: "Projetos de Sucesso", value: "+800" },
+        { label: "Economia no Projeto", value: "80%" },
+        { label: "10 Anos", value: "No Mercado" },
+        { label: "Suporte do início ao fim", value: "100%" }
     ];
 
     return (

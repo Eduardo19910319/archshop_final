@@ -31,7 +31,7 @@ const Agony = () => {
     ];
 
     return (
-        <section className="w-full py-24 bg-gray-50 border-y border-gray-100 relative overflow-hidden">
+        <section className="w-full pt-16 pb-32 bg-gray-50 border-y border-gray-100 relative overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
                 <div className="text-center mb-16">
                     <Reveal direction="up">
@@ -40,13 +40,13 @@ const Agony = () => {
                         </div>
                     </Reveal>
                     <Reveal direction="up" delay={0.1}>
-                        <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none max-w-3xl mx-auto">
-                            Evite os Erros Comuns em <span className="text-gray-400 italic">Projetos de Casas de Luxo.</span>
+                        <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none max-w-4xl mx-auto">
+                            O Pesadelo de uma <span className="text-gray-400 italic">Obra Sem Projeto Técnico.</span>
                         </h2>
                     </Reveal>
                     <Reveal direction="up" delay={0.2}>
                         <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-                            A maioria dos projetos falha antes mesmo do primeiro tijolo ser assentado. Sem previsibilidade, seu sonho vira uma fonte inesgotável de prejuízo.
+                            Não deixe seu sonho virar uma fonte inesgotável de prejuízo. Entenda os riscos de seguir pelo caminho tradicional.
                         </p>
                     </Reveal>
                 </div>

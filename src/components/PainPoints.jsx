@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 
 const PainPoints = () => {
   return (
-    <section className="w-full py-24 bg-white relative">
+    <section className="w-full pt-16 pb-24 bg-white relative">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <Reveal direction="up">

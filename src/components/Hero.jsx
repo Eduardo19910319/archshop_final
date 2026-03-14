@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 
 const Hero = () => {
   return (
-    <section className="w-full min-h-screen px-4 md:px-6 pt-4 pb-24 md:pt-6 md:pb-32 flex flex-col justify-center bg-zinc-100">
+    <section className="w-full min-h-screen px-4 md:px-6 pt-32 pb-24 md:pt-40 md:pb-32 flex flex-col justify-center bg-zinc-100">
       <div className="relative w-full min-h-[calc(100vh-2rem)] md:min-h-[calc(100vh-3rem)] rounded-[2rem] sm:rounded-3xl lg:rounded-[2.5rem] overflow-hidden bg-zinc-50 flex flex-col justify-center shadow-xl border border-black/5 group">
 
         {/* Cinematic Backdrop & Lighting */}
@@ -79,11 +79,11 @@ const Hero = () => {
                 <div className="space-y-4 relative z-10">
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs font-bold uppercase tracking-tight text-gray-500">
-                      <span>Economia Gerada (BIM)</span>
-                      <span className="text-archshop-orange">20%</span>
+                      <span>Até 80% menos que projetos convencionais</span>
+                      <span className="text-archshop-orange">80%</span>
                     </div>
                     <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                      <div className="w-[20%] h-full bg-archshop-orange rounded-full relative"></div>
+                      <div className="w-[80%] h-full bg-archshop-orange rounded-full relative"></div>
                     </div>
                   </div>
 

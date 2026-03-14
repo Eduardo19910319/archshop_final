@@ -35,8 +35,8 @@ const FAQ = ({ items }) => {
             </div>
           </Reveal>
           <Reveal direction="up" delay={0.1}>
-            <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 font-outfit uppercase-none">
-              Dúvidas <span className="text-gray-400 italic">Frequentes.</span>
+            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 font-outfit uppercase-none">
+              Tudo o que você <span className="text-gray-400 italic">Precisa Saber.</span>
             </h2>
           </Reveal>
         </div>
