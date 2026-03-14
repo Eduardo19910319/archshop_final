@@ -30,7 +30,7 @@ const CaptureCTA = () => {
                     </Reveal>
  
                     <div className="flex flex-col items-center justify-center relative z-10 w-full max-w-xl mx-auto">
-                        <Reveal direction="up" delay={0.3} className="w-full mb-6">
+                        <div className="w-full mb-6">
                             <div className="relative group max-w-sm mx-auto">
                                 <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 w-4 h-4 group-focus-within:text-archshop-orange transition-colors" />
                                 <input 
@@ -39,8 +39,8 @@ const CaptureCTA = () => {
                                     className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-6 text-white focus:outline-none focus:border-archshop-orange transition-all placeholder:text-zinc-600 font-medium text-base text-center md:text-left shadow-inner shadow-black/20"
                                 />
                             </div>
-                        </Reveal>
-                        <Reveal direction="up" delay={0.4} className="w-full">
+                        </div>
+                        <div className="w-full">
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <button className="w-full sm:w-auto min-w-[200px] bg-archshop-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2 group shadow-xl shadow-orange-950/20 text-sm md:text-base uppercase tracking-wider">
                                     Quero meu Guia <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -49,7 +49,7 @@ const CaptureCTA = () => {
                                     Falar com Especialista
                                 </button>
                             </div>
-                        </Reveal>
+                        </div>
                     </div>
                     
                     <Reveal direction="up" delay={0.5}>

@@ -7,21 +7,15 @@ const PainPoints = () => {
     <section className="w-full pt-16 pb-24 bg-white relative">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
         <div className="text-center mb-16">
-          <Reveal direction="up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-archshop-orange/10 border border-archshop-orange/20 text-archshop-orange text-xs font-semibold mb-6">
-              ArchShop vs. Tradicional
-            </div>
-          </Reveal>
-          <Reveal direction="up" delay={0.1}>
-            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none">
-              Por que projetos comuns <span className="text-gray-400 italic">demoram tanto?</span>
-            </h2>
-          </Reveal>
-          <Reveal direction="up" delay={0.2}>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-              Comparamos o método que trava sua obra com a agilidade que você precisa.
-            </p>
-          </Reveal>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-archshop-orange/10 border border-archshop-orange/20 text-archshop-orange text-xs font-semibold mb-6">
+            ArchShop vs. Tradicional
+          </div>
+          <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none">
+            O Método ArchShop: <span className="text-gray-400 italic">Por que projetos comuns demoram tanto?</span>
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+            Comparamos o método que trava sua obra com a agilidade que você precisa.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
