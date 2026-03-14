@@ -18,34 +18,34 @@ const CaptureCTA = () => {
                     </Reveal>
                     
                     <Reveal direction="up" delay={0.1}>
-                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-white mb-10 leading-[1.1] font-outfit uppercase-none max-w-5xl mx-auto">
+                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-white mb-10 leading-[1.1] font-outfit uppercase-none max-w-4xl mx-auto">
                             Inicie o seu <span className="text-archshop-orange italic">Projeto dos Sonhos</span> agora mesmo.
                         </h2>
                     </Reveal>
                     
                     <Reveal direction="up" delay={0.2}>
-                        <p className="text-zinc-400 text-xl mb-16 max-w-3xl mx-auto font-light leading-relaxed">
+                        <p className="text-zinc-400 text-lg md:text-xl mb-16 max-w-2xl mx-auto font-light leading-relaxed">
                             Receba nosso guia exclusivo sobre como planejar sua obra sem estresse e com <strong className="font-semibold text-white">previsibilidade financeira total.</strong>
                         </p>
                     </Reveal>
  
-                    <div className="flex flex-col items-center gap-8 mb-16 relative z-10">
-                        <Reveal direction="up" delay={0.3} className="w-full max-w-md">
-                            <div className="relative group">
+                    <div className="flex flex-col items-center justify-center relative z-10 w-full max-w-2xl mx-auto">
+                        <Reveal direction="up" delay={0.3} className="w-full mb-8">
+                            <div className="relative group max-w-md mx-auto">
                                 <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-zinc-600 w-5 h-5 group-focus-within:text-archshop-orange transition-colors" />
                                 <input 
                                     type="email" 
                                     placeholder="Seu melhor e-mail" 
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-6 pl-14 pr-6 text-white focus:outline-none focus:border-archshop-orange transition-all placeholder:text-zinc-600 font-medium text-lg shadow-inner shadow-black/20"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-6 pl-14 pr-6 text-white focus:outline-none focus:border-archshop-orange transition-all placeholder:text-zinc-600 font-medium text-lg text-center md:text-left shadow-inner shadow-black/20"
                                 />
                             </div>
                         </Reveal>
-                        <Reveal direction="up" delay={0.4}>
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="w-full sm:w-auto bg-archshop-orange hover:bg-orange-600 text-white font-bold py-6 px-12 rounded-2xl transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-orange-950/40 text-lg uppercase tracking-wider">
+                        <Reveal direction="up" delay={0.4} className="w-full">
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <button className="w-full sm:w-auto min-w-[240px] bg-archshop-orange hover:bg-orange-600 text-white font-bold py-6 px-10 rounded-2xl transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-orange-950/40 text-base md:text-lg uppercase tracking-wider">
                                     Quero meu Guia <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
-                                <button className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white font-bold py-6 px-12 rounded-2xl transition-all flex items-center justify-center gap-3 border border-white/10 text-lg uppercase tracking-wider">
+                                <button className="w-full sm:w-auto min-w-[240px] bg-white/5 hover:bg-white/10 text-white font-bold py-6 px-10 rounded-2xl transition-all flex items-center justify-center gap-3 border border-white/10 text-base md:text-lg uppercase tracking-wider">
                                     Falar com Especialista
                                 </button>
                             </div>

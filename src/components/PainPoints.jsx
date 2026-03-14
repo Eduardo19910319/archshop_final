@@ -13,9 +13,14 @@ const PainPoints = () => {
             </div>
           </Reveal>
           <Reveal direction="up" delay={0.1}>
-            <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none">
+            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none">
               Por que projetos comuns <span className="text-gray-400 italic">demoram tanto?</span>
             </h2>
+          </Reveal>
+          <Reveal direction="up" delay={0.2}>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+              Comparamos o método que trava sua obra com a agilidade que você precisa.
+            </p>
           </Reveal>
         </div>
 

@@ -31,13 +31,18 @@ const FAQ = ({ items }) => {
         <div className="text-center mb-16 md:mb-20">
           <Reveal direction="up">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-archshop-orange/10 border border-archshop-orange/20 text-archshop-orange text-xs font-semibold mb-6 uppercase">
-                Central de Ajuda
+                FAQ ArchShop
             </div>
           </Reveal>
           <Reveal direction="up" delay={0.1}>
-            <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 font-outfit uppercase-none">
+            <h2 className="text-3xl lg:text-6xl font-semibold text-gray-900 font-outfit uppercase-none">
               Tudo o que você <span className="text-gray-400 italic">Precisa Saber.</span>
             </h2>
+          </Reveal>
+          <Reveal direction="up" delay={0.2}>
+            <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto">
+              Tire suas dúvidas sobre prazos, custos e como funciona nossa entrega em BIM.
+            </p>
           </Reveal>
         </div>
 
