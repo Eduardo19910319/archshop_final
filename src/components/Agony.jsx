@@ -41,7 +41,7 @@ const Agony = () => {
                     </Reveal>
                     <Reveal direction="up" delay={0.1}>
                         <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none max-w-4xl mx-auto">
-                            O Pesadelo de uma <span className="text-gray-400 italic">Obra Sem Projeto Técnico.</span>
+                            Por que <span className="text-gray-400 italic">80% das Obras de Alto Padrão</span> Estouram o Orçamento?
                         </h2>
                     </Reveal>
                     <Reveal direction="up" delay={0.2}>

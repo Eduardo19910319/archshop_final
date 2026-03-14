@@ -33,7 +33,7 @@ const Hero = () => {
 
             <Reveal direction="up" delay={0.2}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] mb-6 font-outfit uppercase-none">
-                Projetos de <span className="text-archshop-orange">Arquitetura de Alto Padrão</span> e Tecnologia BIM
+                Projetos de <span className="text-archshop-orange">Arquitetura de Alto Padrão em BIM:</span> Sua Obra sem Erros e com Previsibilidade Total
               </h1>
             </Reveal>
 

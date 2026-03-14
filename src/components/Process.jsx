@@ -35,7 +35,7 @@ const Process = () => {
                     </Reveal>
                     <Reveal direction="up" delay={0.1}>
                         <h2 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-6 font-outfit">
-                            Como Transformamos <span className="text-gray-400 italic">sua Ideia em Realidade.</span>
+                            O Método ArchShop: <span className="text-gray-400 italic">Como Transformamos sua Ideia em um Projeto Executivo de Precisão</span>
                         </h2>
                     </Reveal>
                 </div>

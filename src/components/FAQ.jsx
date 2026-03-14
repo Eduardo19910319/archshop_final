@@ -6,7 +6,7 @@ const FAQ = ({ items }) => {
   const defaultFaqs = [
     {
       q: "Quanto custa um projeto personalizado?",
-      a: "O valor varia de acordo com a área do lote e do projeto. Porém, nosso projeto executivo se paga na obra, gerando economia real de até 20% em materiais e evitando retrabalhos."
+      a: "O valor varia de acordo com a área do lote e do projeto. Porém, nosso projeto executivo se paga na obra, gerando economia real de até 80% em materiais e evitando retrabalhos."
     },
     {
       q: "Qual o prazo de entrega?",
@@ -36,7 +36,7 @@ const FAQ = ({ items }) => {
           </Reveal>
           <Reveal direction="up" delay={0.1}>
             <h2 className="text-3xl lg:text-6xl font-semibold text-gray-900 font-outfit uppercase-none">
-              Tudo o que você <span className="text-gray-400 italic">Precisa Saber.</span>
+              Dúvidas Frequentes <span className="text-gray-400 italic">sobre Projetos de Arquitetura em BIM</span>
             </h2>
           </Reveal>
           <Reveal direction="up" delay={0.2}>

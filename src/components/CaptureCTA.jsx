@@ -4,9 +4,9 @@ import Reveal from './Reveal';
 
 const CaptureCTA = () => {
     return (
-        <section className="w-full pt-24 pb-48 bg-white relative overflow-hidden">
+        <section className="w-full pt-32 pb-64 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-                <div className="bg-zinc-900 border border-white/5 rounded-[2.5rem] p-8 md:p-16 lg:p-24 relative overflow-hidden text-center shadow-2xl">
+                <div className="bg-zinc-900 border border-white/5 rounded-[2.5rem] p-8 md:p-16 lg:p-24 relative overflow-hidden text-center shadow-2xl flex flex-col items-center">
                     {/* Background Detail - Enhanced Gradient */}
                     <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-archshop-orange/20 via-transparent to-transparent blur-[120px] pointer-events-none opacity-60"></div>
                     <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-tr from-white/5 to-transparent blur-[100px] pointer-events-none"></div>
@@ -19,7 +19,7 @@ const CaptureCTA = () => {
                     
                     <Reveal direction="up" delay={0.1}>
                         <h2 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-white mb-10 leading-[1.1] font-outfit uppercase-none max-w-4xl mx-auto">
-                            Inicie o seu <span className="text-archshop-orange italic">Projeto dos Sonhos</span> agora mesmo.
+                            Transforme seu <span className="text-archshop-orange italic">Terreno em uma Obra de Arte</span> com Previsibilidade Total
                         </h2>
                     </Reveal>
                     

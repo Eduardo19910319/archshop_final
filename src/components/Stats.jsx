@@ -20,7 +20,7 @@ const Stats = () => {
                     </Reveal>
                     <Reveal direction="up" delay={0.1}>
                         <h2 className="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6 font-outfit uppercase-none">
-                            Números que Comprovam <span className="text-gray-400 italic">nossa Excelência.</span>
+                            Nossa Autoridade: <span className="text-gray-400 italic">+800 Projetos Entregues com Suporte Completo</span>
                         </h2>
                     </Reveal>
                 </div>
