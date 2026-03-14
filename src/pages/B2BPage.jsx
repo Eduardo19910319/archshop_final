@@ -3,7 +3,7 @@ import B2BHero from '../components/b2b/B2BHero';
 import B2BStats from '../components/b2b/B2BStats';
 import B2BWorkflow from '../components/b2b/B2BWorkflow';
 import B2BPortfolio from '../components/b2b/B2BPortfolio';
-import B2BServiceDetails from '../components/b2b/B2BServices';
+import B2BServices from '../components/b2b/B2BServices';
 import B2BComparison from '../components/b2b/B2BComparison';
 import B2BGuarantee from '../components/b2b/B2BGuarantee';
 import B2BPricing from '../components/b2b/B2BPricing';
